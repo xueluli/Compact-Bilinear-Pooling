@@ -19,13 +19,13 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 input_dim = 512
 input_dim1 = 512
 input_dim2 = 512
-output_dim = 16384
+output_dim = 8192
 
 generate_sketch_matrix = lambda rand_h, rand_s, input_dim, output_dim: torch.sparse.FloatTensor(torch.stack([torch.arange(input_dim, out = torch.LongTensor()), rand_h.long()]), rand_s.float(), [input_dim, output_dim]).to_dense()
 sketch_matrix01 = torch.nn.Parameter(generate_sketch_matrix(torch.randint(output_dim, size = (input_dim1,)), 2 * torch.randint(2, size = (input_dim1,)) - 1, input_dim1, output_dim))
 sketch_matrix02 = torch.nn.Parameter(generate_sketch_matrix(torch.randint(output_dim, size = (input_dim2,)), 2 * torch.randint(2, size = (input_dim2,)) - 1, input_dim2, output_dim))
-torch.save(sketch_matrix01,'/cvdata/xuelu/CUB_200_2011/bilinear-cnn1/src/sketch_matrix1_16384.pth')
-torch.save(sketch_matrix02,'/cvdata/xuelu/CUB_200_2011/bilinear-cnn1/src/sketch_matrix2_16384.pth')
+torch.save(sketch_matrix01,'/cvdata/xuelu/CUB_200_2011/bilinear-cnn1/src/sketch_matrix1.pth')
+torch.save(sketch_matrix02,'/cvdata/xuelu/CUB_200_2011/bilinear-cnn1/src/sketch_matrix2.pth')
 
 class BCNN(torch.nn.Module):
     """B-CNN for CUB200.
