@@ -1,12 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-"""Fine-tune all layers for bilinear CNN.
-
-Usage:
-    CUDA_VISIBLE_DEVICES=0,1,2,3 ./src/bilinear_cnn_all.py --base_lr 0.05 \
-        --batch_size 64 --epochs 100 --weight_decay 5e-4
-"""
-
 from __future__ import division
 import os
 
@@ -24,18 +15,6 @@ torch.manual_seed(0)
 torch.cuda.manual_seed_all(0)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
-__all__ = ['BCNN', 'BCNNManager']
-__author__ = 'Hao Zhang'
-__copyright__ = '2018 LAMDA'
-__date__ = '2018-01-09'
-__email__ = 'zhangh0214@gmail.com'
-__license__ = 'CC BY-SA 3.0'
-__status__ = 'Development'
-__updated__ = '2018-01-13'
-__version__ = '1.2'
-
-
 
 input_dim = 512
 input_dim1 = 512
