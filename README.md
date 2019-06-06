@@ -12,3 +12,5 @@ Namely, there are N images in each folder "class#" (the number of images from ea
 **compact_bilinear_cnn_all.py**:training the whole network include the convolutional layers in the pre-train VGG 16 model.
 
 In order to obtain the same accuracy as claimed in the paper, the readers should first train the network using **compact_bilinear_cnn_fc.py** with large learning rate, save the results. Then, use the results as the initial values for the network, and train the whole network using **compact_bilinear_cnn_all** with small learning rate. The default leanring rates are given in the files.
+
+The work is constructed based on the repo: https://github.com/HaoMood/bilinear-cnn
