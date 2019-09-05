@@ -1,5 +1,5 @@
 # Compact-Bilinear-Pooling
-This is a re-implementation of t the 2016 cvpr paper "Compact Bilinear Pooling" for fine-grained image classification using Pytorch  
+This is a re-implementation of the 2016 cvpr paper "Compact Bilinear Pooling" for fine-grained image classification using Pytorch  
 The repo itself does not include any raw data. Save your images according to the heirarchical structure as below:
 
 Level 0: class1, class2, ..., classC  
